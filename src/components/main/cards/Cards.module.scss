@@ -1,0 +1,140 @@
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.title{
+    font-family: 'proxima-bold';
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: 0.01em;
+    color: #000000;
+    margin: 32px 0 35px 0;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    margin-bottom: 65px;
+}
+.cardImg{
+    width: 100%;
+    object-fit: contain;
+}
+.pizzaName{
+    font-family: 'proxima-extraBold';
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #000000;
+    margin: 11px 0 22px 0;
+}
+.pizzaInfo{
+    display: flex;
+    flex-direction: column;
+    background: #F3F3F3;
+    border-radius: 10px;
+    width: 100%;
+     padding: 7px 5px;
+}
+.pizzaTypeBox{
+    display: flex;
+   
+    justify-content: space-between;
+    gap: 5px;
+}
+.pizzaType{
+    font-family: 'proxima-bold';
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    color: #2C2C2C;
+    padding: 10px;
+    cursor: auto;
+    user-select: none;
+    width: 100%;
+    &.active{
+        background: white;
+        border-radius: 5px;
+    }
+}
+.pizzaSizeBox{
+    display: flex;
+    justify-content: center;
+    margin-top: 7px;
+    gap: 6px;
+}
+.pizzaSize{
+    font-family: 'proxima-bold';
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    color: #2C2C2C;
+    user-select: none;
+    padding: 10px 0 ;
+    width: 100%;
+    
+    &.active{
+        background: white;
+        border-radius: 5px;
+    }
+}
+.priceBox{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 17px;
+}
+.price{
+    font-family: 'proxima-bold';
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0.015em;    
+    color: #000000;
+}
+.add{
+    user-select: none;
+    padding: 11px 18px 14px 18px;
+    background: #EB5A1E;
+    color: white;
+    border-radius: 30px;
+    font-family: 'proxima-bold';
+    text-align: center;
+    display: flex;
+    align-items: center;
+    
+    &:hover{
+        background: white;
+        padding: 11px 18px 12px 18px;
+        color: #EB5A1E;
+        border: 1px solid #EB5A1E ;
+    }
+    &.active{
+        background: white;
+        padding: 11px 18px 12px 18px;
+        color: #EB5A1E;
+        border: 1px solid #EB5A1E ;
+    }
+}
+.plus{
+    margin-right: 7px;
+}
+.count{
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #EB5A1E;
+    border-radius: 50%;
+    text-align: center;
+    margin-left: 5px;
+    color: white ;
+}

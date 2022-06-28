@@ -1,0 +1,32 @@
+.cart{
+    display: flex;
+    align-items: center;
+    padding: 15px 23px;
+    background: #FE5F1E;
+    border-radius: 30px;
+    user-select: none;
+}
+.price{
+    color: white;
+    font-size: 16px;
+    line-height: 19px;
+    font-family: 'proxima-bold';
+    display: flex;
+    align-items: center;
+    
+}
+.price:after{
+    content: '';
+    display: block;
+    width: 1px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.25);
+    margin: 0 13px ;
+}
+.count{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: white;
+    font-family: 'proxima-bold';
+}

@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { Cards } from "./Cards";
-import {SetPizzaThunkCreator,togglePizzaType,togglePizzaSize,decreasePizzaPrice ,addPizzaPrice} from '../../../redux/cards-reducer'
+import {SetPizzaThunkCreator,togglePizzaType,togglePizzaSize,decreasePizzaPrice ,addPizzaPrice,sortPizza} from '../../../redux/cards-reducer'
+import { setSortBy,toggleSort } from "../../../redux/tabs-reducers";
 import { increasePrice } from "../../../redux/tabs-reducers";
 
 const mapStateToProps =(state)=>({
@@ -10,4 +11,5 @@ const mapStateToProps =(state)=>({
 export default connect(mapStateToProps, {
     SetPizzaThunkCreator,increasePrice,
     togglePizzaType,togglePizzaSize,
-    decreasePizzaPrice ,addPizzaPrice})(Cards)
+    decreasePizzaPrice ,addPizzaPrice,
+    setSortBy,sortPizza,toggleSort})(Cards)

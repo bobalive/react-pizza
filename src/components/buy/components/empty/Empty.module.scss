@@ -1,0 +1,36 @@
+.emptyPage{
+    width: 547px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 163px 0;
+}
+.title{
+    font-family: 'proxima-bold';
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: 0.01em;
+    color: #000000;
+    margin-bottom: 10px;
+}
+.description{
+    font-family: 'proxima-regular';
+    font-size: 18px;
+    line-height: 145.4%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #777777;
+    margin-bottom: 47px;
+}
+.link{
+    font-family: 'proxima-bold';
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    color: #FFFFFF;
+    margin-top: 70px;
+    padding: 15px 31px; 
+    background: #282828;
+    border-radius: 30px;
+}

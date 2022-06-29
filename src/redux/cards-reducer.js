@@ -7,7 +7,8 @@ const SetPizza = "SetPizza",
   TogglePizzaSize ='TogglePizzaSize',
   AddPizzaPrice='AddPizzaPrice',
   DecreasePizzaPrice='DecreasePizzaPrice',
-  SortPizza='SortPizza'
+  SortPizza='SortPizza',
+  RemoveActive='RemoveActive'
 
 const initialState = {
   cards: [],
@@ -149,13 +150,19 @@ let pizzaReducer = (state = initialState, action) => {
         return{...state,
             cards:state.cards.map(card=>{
                 if(card.id == action.id){
-                    return{...card, count:card.count>0?card.count-1:0, isActive:card.count -1>=0?true:false }
+                  if(action.count){
+                    return {...card, count:0, isActive:false}
+                  }
+                    return{...card, count:card.count>0?card.count-1:0 , isActive:card.count != 0}
                 }
                 return{...card}
             }),
             sortedCards:state.sortedCards.map(card=>{
                 if(card.id == action.id){
-                    return{...card, count:card.count>0?card.count-1:0, isActive:card.count -1>=0?true:false }
+                  if(action.count){
+                    return{...card, count:0, isActive:false}
+                  }
+                    return{...card, count:card.count>0?card.count-1:0, isActive:card.count != 0}
                 }
                 return{...card}
             })
@@ -190,7 +197,21 @@ let pizzaReducer = (state = initialState, action) => {
         }
         return{...state}
 
-        
+    
+      case RemoveActive:
+        return{...state,
+          cards:state.cards.map(card=>{
+            if(card.id == action.id){
+              return{...card, isActive:false}
+            }
+            return{...card}
+          }),
+          sortedCards :state.cards.map(card=>{
+            if(card.id == action.id){
+              return{...card, isActive:false}
+            }
+            return{...card}
+          })}
     default:
       return { ...state };
   }
@@ -214,6 +235,7 @@ export const setCategory = (category) => ({ type: SetCategory, category });
 export const togglePizzaType =(id, name) =>({type:TogglePizzaType, id, name})
 export const togglePizzaSize =(id, name) =>({type:TogglePizzaSize, id, name})
 export const addPizzaPrice =(id)=>({type:AddPizzaPrice, id})
-export const decreasePizzaPrice =(id)=>({type:DecreasePizzaPrice, id})
+export const decreasePizzaPrice =(id, count)=>({type:DecreasePizzaPrice, id, count})
 export const sortPizza = (sort)=>({type:SortPizza, sort})
+export const removeActive = (id)=>({type:RemoveActive, id})
 export default pizzaReducer;

@@ -14,11 +14,11 @@ const initialState = {
         {name:'закрытые',id:6 ,isActive:false}
     ],
     sort:[
-        {name:'популярности',id:1, isActive:true},
+        {name:'популярности',id:1, isActive:false},
         {name:'цене', id:2,isActive:false},
         {name:'алфавиту',id:3, isActive:false}
     ],
-    sortBy:'популярности',
+    sortBy:'',
     totalCount:0,
     totalPrice:0
 }
@@ -50,7 +50,9 @@ let tabsReducer=  (state = initialState, action)=>{
         case IncreasePriceCount:
             return({...state, totalCount:state.totalCount+1,totalPrice:state.totalPrice + Number( action.price)})
         case DecreasePriceCount:
-            return({...state,  totalCount:state.totalCount+1,totalPrice:state.totalPrice - Number(action.price)})
+            return({...state,
+                 totalCount:state.totalCount-action.count >= 0?state.totalCount-action.count: 0,
+                 totalPrice:state.totalPrice - Number(action.price)>=0 ?state.totalPrice - Number(action.price):0})
         default:
             return state
     }
@@ -62,4 +64,4 @@ export const toggleTabs = (id)=>({type:ToggleTabs, id})
 export const toggleSort = (id) =>({type:ToggleSort, id})
 export const setSortBy = (sortBy)=>({type:SetSortBy , sortBy})
 export const increasePrice = (price) =>({type:IncreasePriceCount, price})
-export const decreasePrice = (price)=>({type:DecreasePriceCount, price})
+export const decreasePrice = (price, count)=>({type:DecreasePriceCount, price, count})

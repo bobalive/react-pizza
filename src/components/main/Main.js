@@ -5,7 +5,7 @@ import NavContainer from './nav/NavContainer'
 
 const Main = () => {
   return (
-    <main>
+    <main style ={{width:'100%'}}>
       <NavContainer/>
       <CardsContainer/>
     </main>

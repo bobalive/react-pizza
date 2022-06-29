@@ -34,6 +34,7 @@ export const Sort = (props) => {
           );
         })}
       </ul>
+
     </div>
   );
 };

@@ -5,8 +5,10 @@ import { Preloader } from './Preloader'
 
 export const Cards = (props) => {
   useEffect(()=>{
-    props.SetPizzaThunkCreator()
-   },[])
+    props.setSortBy('')
+    props.sortPizza('')
+    props.toggleSort('')
+  }, [])
   return (
     <div className= {s.main}>
      <h2 className={s.title}> Все пиццы</h2>

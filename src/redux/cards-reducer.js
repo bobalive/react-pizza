@@ -66,8 +66,8 @@ let pizzaReducer = (state = initialState, action) => {
       return {
         ...state,
         sortedCards: state.cards.filter((card) => {
-          if (action.category != 0) {
-            return card.category == action.category;
+          if (action.category !== 0) {
+            return card.category === action.category;
           } else {
             return true;
           }

@@ -1,8 +1,9 @@
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     margin-top: 40px;
+    flex-wrap:wrap ;
 }
 
 
@@ -27,6 +28,14 @@
         background: #000;
         color: white;
     }
+}
+.tabsWrapper{
+    display: flex;
+    flex-direction: column;
+
+}
+.choosen{
+    display: none;
 }
 
 .sort {
@@ -96,5 +105,32 @@
     &.active {
         color: #FE5F1E;
         background: rgba(254, 95, 30, 0.05);
+    }
+}
+.opened{
+    height: auto;
+}
+@media screen and (max-width:960px) {
+    .nav{
+        justify-content: center;
+        gap: 10px;
+    }
+}
+@media  (max-width: 840px) {
+    .nav{
+        flex-direction: column;
+    }
+    .tabs{
+        flex-direction: column;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        gap: 10px 0;
+    }
+    .tabs.opened{
+        height: 300px;
+    }
+    .choosen{
+        display: block;
     }
 }

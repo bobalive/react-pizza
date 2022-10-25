@@ -6,6 +6,13 @@ import s from "./Nav.module.scss";
 export const Sort = (props) => {
 
   let [isActive, toggleActive] = useState(false);
+  useEffect(()=>{
+    document.body.addEventListener('click' , (e)=>{
+      if(!e.target.classList.value.includes(s.sortBy)){
+        toggleActive(false)
+      };
+    },)
+})
     
   return (
     <div className={s.sort}>

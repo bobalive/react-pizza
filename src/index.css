@@ -27,3 +27,8 @@
   background: #FFDF8C;
   padding: 43px   ;
 }
+@media (max-width:400px) {
+  .body{
+    padding: 10px;
+  }
+}

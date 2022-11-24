@@ -1,5 +1,6 @@
 .emptyPage{
-    width: 547px;
+    max-width: 547px;
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -33,4 +34,9 @@
     padding: 15px 31px; 
     background: #282828;
     border-radius: 30px;
+}
+.shoppingCart{
+    max-width: 537px;
+    width: 100%;
+
 }

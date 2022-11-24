@@ -10,8 +10,9 @@ export const Empty = (props) => {
       </h1>
       <p className={s.description}>Вероятней всего, вы не заказывали ещё пиццу.
        Для того, чтобы заказать пиццу, перейди на главную страницу.</p>
-      <img src ={require('../../../../assets/images/shopping-cart-colour.png')} alt ='назад'/>
+      <img  className={s.shoppingCart} src='shopping-cart-colour.png' alt ='назад'/>
       <NavLink to = '/' className={s.link}>Вернуться назад</NavLink>
+
     </div>
   )
 }
